@@ -24,7 +24,7 @@ fn insertion_sort(v: &mut Vec<usize>) {
             insert_loc = (insert_loc - 1) as isize;
         }
 
-        // Insert Value
+        // Insert current value
         v[(insert_loc + 1) as usize] = cur_val;
         trace(&v);
     }
