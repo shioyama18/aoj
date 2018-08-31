@@ -11,21 +11,18 @@ fn trace(v: &Vec<usize>) {
 }
 
 fn insertion_sort(v: &mut Vec<usize>) {
-    let mut insert_loc: isize; // location to insert current value
-    let mut cur_val: usize;    // current value
-
     for i in 1..v.len() {
-        cur_val = v[i];
-        insert_loc = (i - 1) as isize;
+        let cur_val = v[i];
+        let mut insert_loc = i;
 
         // Shift all elements greater than current value
-        while insert_loc >= 0 && v[insert_loc as usize] > cur_val { 
-            v[(insert_loc + 1) as usize] = v[insert_loc as usize];
-            insert_loc = (insert_loc - 1) as isize;
+        while insert_loc >= 1 && v[insert_loc - 1] > cur_val { 
+            v[insert_loc] = v[insert_loc - 1];
+            insert_loc -= 1;
         }
 
         // Insert current value
-        v[(insert_loc + 1) as usize] = cur_val;
+        v[insert_loc] = cur_val;
         trace(&v);
     }
 }
