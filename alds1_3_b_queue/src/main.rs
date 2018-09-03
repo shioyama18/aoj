@@ -1,3 +1,5 @@
+// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_3_B
+
 use std::collections::VecDeque;
 
 struct Process {
