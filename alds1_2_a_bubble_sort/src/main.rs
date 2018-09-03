@@ -1,26 +1,20 @@
 // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_2_A
-
-fn swap_count(v: &mut Vec<usize>, i: usize, j: usize, count: usize) -> usize {
-    v.swap(i, j);
-    count + 1
-}
-
 fn bubble_sort(v: &mut Vec<usize>) -> usize {
     let mut flag = true;
-    let mut count = 0;
-    let mut i = 0;
+    let mut cnt = 0;
+    let n = v.len();
 
     while flag {
         flag = false;
-        for j in (i + 1..v.len()).rev() {
+        for j in (1..n).rev() {
             if v[j] < v[j-1] {
+                v.swap(j, j-1);
                 flag = true;
-                count = swap_count(v, j-1, j, count);
+                cnt += 1;
             }
         }
-        i += 1;
     }
-    count            
+    cnt            
 }
 
 fn main() {

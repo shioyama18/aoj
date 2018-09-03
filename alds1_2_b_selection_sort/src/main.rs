@@ -21,11 +21,18 @@ fn selection_sort(v: &mut Vec<usize>) -> usize {
 
 fn main() {
     let mut n = String::new();
-    std::io::stdin().read_line(&mut n).unwrap();
+    std::io::stdin()
+        .read_line(&mut n)
+        .unwrap();
 
     let mut buffer = String::new();
-    std::io::stdin().read_line(&mut buffer).unwrap();
-    let mut v: Vec<usize> = buffer.split_whitespace().map(|s| s.parse().unwrap()).collect();
+    std::io::stdin()
+        .read_line(&mut buffer)
+        .unwrap();
+    let mut v: Vec<usize> = buffer
+        .split_whitespace()
+        .map(|s| s.parse().unwrap())
+        .collect();
 
     let count = selection_sort(&mut v);
     for (i, val) in v.iter().enumerate() {

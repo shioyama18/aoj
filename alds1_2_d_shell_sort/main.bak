@@ -1,0 +1,59 @@
+// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_2_D
+
+fn insertion_sort(A: &mut Vec<usize>, g: isize) -> usize {
+    let mut cnt = 0;
+    for i in g..(A.len() as isize) {
+        let v = A[i as usize];
+        let mut j = (i as isize) - g;
+
+        while j >= 0 && A[j as usize] > v {
+            A[(j + g) as usize] = A[j as usize];
+            j -= g;
+            cnt += 1;
+        }
+        A[(j + g) as usize] = v;
+    }
+    cnt
+}
+
+fn shell_sort(v: &mut Vec<usize>) -> (usize, Vec<isize>) {
+    let mut cnt = 0;
+    let mut g: Vec<isize> = Vec::new();
+    let mut h: isize = 1;
+    while h <= v.len() as isize {
+        g.push(h);
+        h = 3*h + 1;
+    }
+    
+    for i in g.iter().rev() {
+        cnt += insertion_sort(v, *i);
+    }
+    
+    (cnt, g)
+}
+
+fn main() {
+    let mut n = String::new();
+    std::io::stdin().read_line(&mut n).unwrap();
+    let n: usize = n.trim().parse().unwrap();
+    
+    let mut v = Vec::new();
+    for _ in 0..n {
+        let mut buffer = String::new();
+        std::io::stdin().read_line(&mut buffer).unwrap();
+        let i = buffer.trim().parse().unwrap();
+        v.push(i);
+    }
+    
+    let (cnt, g) = shell_sort(&mut v);
+    println!("{}", g.len());
+    for (i, val) in g.iter().rev().enumerate() {
+        if i > 0 { print!(" "); }
+        print!("{}", val);
+    }
+    print!("\n");
+    println!("{}", cnt);
+    for val in v {
+        println!("{}", val);
+    }
+}
