@@ -1,0 +1,6 @@
+[package]
+name = "alds1_7_a_rooted_trees"
+version = "0.1.0"
+authors = ["Shion Yamashita <shioyama1118@gmail.com>"]
+
+[dependencies]
