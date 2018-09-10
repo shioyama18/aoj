@@ -26,24 +26,24 @@ impl Tree {
         self
     }
 
-    fn inorder(root: &Self) {
-        match *root {
+    fn inorder(&self) {
+        match *self {
             Tree::Empty => (),
             Tree::Node(ref value, ref left, ref right) => {
-                Tree::inorder(left);
+                left.inorder();
                 print!(" {}", *value);
-                Tree::inorder(right);
+                right.inorder();
             }
         }
     }
 
-    fn preorder(root: &Self) {
-        match *root {
+    fn preorder(&self) {
+        match *self {
             Tree::Empty => (),
             Tree::Node(ref value, ref left, ref right) => {
                 print!(" {}", *value);
-                Tree::preorder(left);
-                Tree::preorder(right);
+                left.preorder();
+                right.preorder();
             }
         }
     }
@@ -63,9 +63,9 @@ fn main() {
             let x = buffer[1].parse::<isize>().unwrap();
             root.insert(x);
         } else if buffer[0] == "print" {
-            Tree::inorder(&root);
+            root.inorder();
             print!("\n");
-            Tree::preorder(&root);
+            root.preorder();
             print!("\n");
         }
     }
