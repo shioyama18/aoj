@@ -30,9 +30,8 @@ fn main() {
     
     reconstruct(&preorder, &inorder, &mut postorder, &mut pos, 0, n);
 
-    for (i, val) in postorder.iter().enumerate() {
-        if i > 0 { print!(" "); }
-        print!("{}", val);
-    }
-    print!("\n");
+    println!("{}", postorder.iter()
+             .map(|x| x.to_string())
+             .collect::<Vec<String>>()
+             .join(" "));
 }
