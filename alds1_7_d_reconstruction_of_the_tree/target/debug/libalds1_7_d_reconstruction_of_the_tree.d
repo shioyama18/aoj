@@ -1,0 +1,1 @@
+/home/shion/aoj_rust/alds1_7_d_reconstruction_of_the_tree/target/debug/libalds1_7_d_reconstruction_of_the_tree.rmeta: /home/shion/aoj_rust/alds1_7_d_reconstruction_of_the_tree/src/main.rs
