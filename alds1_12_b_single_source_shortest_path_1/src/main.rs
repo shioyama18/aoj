@@ -1,4 +1,4 @@
-// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_A
+// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_12_B
 
 const MAX_NODES: usize = 100;
 
