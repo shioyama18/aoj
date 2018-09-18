@@ -1,6 +1,0 @@
-[package]
-name = "alds1_9_c_priority_queue"
-version = "0.1.0"
-authors = ["Shion Yamashita <shioyama1118@gmail.com>"]
-
-[dependencies]

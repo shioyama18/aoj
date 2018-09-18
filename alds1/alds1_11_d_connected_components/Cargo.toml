@@ -1,0 +1,6 @@
+[package]
+name = "alds1_11_d_connected_components"
+version = "0.1.0"
+authors = ["Shion Yamashita <shioyama1118@gmail.com>"]
+
+[dependencies]

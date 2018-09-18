@@ -1,6 +1,0 @@
-[package]
-name = "alds1_12_a_minimum_spanning_tree"
-version = "0.1.0"
-authors = ["Shion Yamashita <shioyama1118@gmail.com>"]
-
-[dependencies]

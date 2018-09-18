@@ -1,1 +1,0 @@
-/home/shion/aoj_rust/alds1_10_b_matrix_chain_multiplication/target/debug/alds1_10_b_matrix_chain_multiplication: /home/shion/aoj_rust/alds1_10_b_matrix_chain_multiplication/src/main.rs

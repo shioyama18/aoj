@@ -1,6 +1,0 @@
-[package]
-name = "alds1_7_c_tree_walk"
-version = "0.1.0"
-authors = ["Shion Yamashita <shioyama1118@gmail.com>"]
-
-[dependencies]
