@@ -257,9 +257,9 @@ fn main() {
         } else if p1.x > p2.x {
             println!("{} {} {} {}", p2.x, p2.y, p1.x, p1.y);
         } else {
-            if p1.y > p2.y {
+            if p1.y < p2.y {
                 println!("{} {} {} {}", p1.x, p1.y, p2.x, p2.y);
-            } else if p1.y < p2.y {
+            } else if p1.y > p2.y {
                 println!("{} {} {} {}", p2.x, p2.y, p1.x, p1.y);
             } else {
                 println!("{} {} {} {}", p1.x, p1.y, p2.x, p2.y);
