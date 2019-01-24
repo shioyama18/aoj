@@ -42,31 +42,37 @@ macro_rules! scan {
     };
 }
 
-fn prime(x: usize) -> bool {
-    if x < 2 { 
-        return false; 
-    } else if x == 2 {
-        return true;
-    }
-
-    if x % 2 == 0 {
-        return false;
-    }
-
-    let mut i = 3;
-    while i*i <= x {
-        if x % i == 0 { return false; }
-        i += 2;
-    }
-    true
-}
-
-fn main() {
+fn main() -> Result<(), Box<std::error::Error>> {
     let n = scan!(usize);
-    let mut cnt = 0;
+
+    let mut counter = 0;
+    let mut max = 2;
+    let mut primes = Vec::new();
+
     for _ in 0..n {
+        // Read number
         let x = scan!(usize);
-        if prime(x) { cnt += 1; }
+
+        // Add all prime numbers upto and including x to list of primes
+        'outer: while max <= x {
+            for p in primes.iter() {
+                if max % p == 0 {
+                    max += 1;
+                    continue 'outer;
+                }
+            }
+
+            primes.push(max);
+            max += 1;
+        }
+
+        // If x is in primes, increment the counter
+        if primes.contains(&x) {
+            counter += 1;
+        }
     }
-    println!("{}", cnt);
+
+    println!("{}", counter);
+
+    Ok(())
 }
