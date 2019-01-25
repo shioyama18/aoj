@@ -1,0 +1,6 @@
+[package]
+name = "alds1_2_d_shell_sort"
+version = "0.1.0"
+authors = ["Shion Yamashita <shioyama1118@gmail.com>"]
+
+[dependencies]
