@@ -44,9 +44,9 @@ macro_rules! scan {
 
 use std::cmp::Ordering;
 
-fn binary_search(s: &[usize], i: usize) -> Option<usize> {
+fn binary_search(s: &[usize], i: usize) -> usize {
     if s.is_empty() {
-        return None;
+        return 0;
     }
 
     let n = s.len();
@@ -55,7 +55,7 @@ fn binary_search(s: &[usize], i: usize) -> Option<usize> {
 
     match mid.cmp(&i) {
         Ordering::Less => binary_search(&s[(mid_index + 1)..n], i),
-        Ordering::Equal => Some(mid),
+        Ordering::Equal => 1,
         Ordering::Greater => binary_search(&s[0..mid_index], i),
     }
 }
@@ -68,9 +68,8 @@ fn main() {
 
     let mut c: usize = 0;
     for i in t {
-        if let Some(_) = binary_search(&s, i) {
-            c += 1;
-        }
+        c += binary_search(&s, i);
     }
+
     println!("{}", c);
 }
