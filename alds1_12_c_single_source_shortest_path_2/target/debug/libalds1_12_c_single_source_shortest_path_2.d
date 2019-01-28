@@ -1,1 +1,0 @@
-/home/shion/aoj_rust/alds1_12_c_single_source_shortest_path_2/target/debug/libalds1_12_c_single_source_shortest_path_2.rmeta: /home/shion/aoj_rust/alds1_12_c_single_source_shortest_path_2/src/main.rs

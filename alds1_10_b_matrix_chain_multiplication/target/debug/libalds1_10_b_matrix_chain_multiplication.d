@@ -1,1 +1,0 @@
-/home/shion/aoj_rust/alds1_10_b_matrix_chain_multiplication/target/debug/libalds1_10_b_matrix_chain_multiplication.rmeta: /home/shion/aoj_rust/alds1_10_b_matrix_chain_multiplication/src/main.rs
